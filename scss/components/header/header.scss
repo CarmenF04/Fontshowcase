@@ -1,0 +1,70 @@
+@use "../../variabelen/mixins.scss";
+@use "../../variabelen/colors.scss";
+@use "../../variabelen/animations.scss";
+
+.header {
+    width: 80vw;
+    max-width: 150rem;
+    min-height: 15rem;
+    display: flex;
+    background-color: colors.$background;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    @include animations.popup;
+
+    &__logo {
+        height: 8rem;
+        width: 8rem;
+        font-size: 200%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: colors.$background;
+        background-color: colors.$accent;
+        border: 0.2rem solid colors.$background;
+
+        &:hover {
+            color: colors.$accent;
+            border: 0.2rem dashed colors.$accent;
+            background-color: colors.$background;
+            @include mixins.rotate(0.6s);
+
+            &.dark{
+                background-color: colors.$background--dark;
+            }
+        }
+    }
+
+    &__rightWrapper {
+        display: flex;
+        gap: 5rem;
+    }
+
+    &__label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__avatar {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+
+        &:hover {
+            @include mixins.rotate(0.4s);
+        }
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+}
